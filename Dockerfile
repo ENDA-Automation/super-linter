@@ -30,9 +30,6 @@ FROM mcr.microsoft.com/powershell:7.4-alpine-3.17 as powershell
 
 FROM python:3.12.2-alpine3.19 as clang-format
 
-ARG GITHUB_TOKEN
-RUN echo $GITHUB_TOKEN | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
 RUN apk add --no-cache \
     build-base \
     clang17 \
