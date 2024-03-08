@@ -6,8 +6,7 @@ runs:
   using: 'docker'
   image: 'docker://ghcr.io/enda-automation/enda-super-linter:latest'  # x-release-please-version
   credentials:
-    username: ${{ github.actor }}
-    password: ${{ secrets.GITHUB_TOKEN }} 
+    id: ${{ secrets.GITHUB_TOKEN }} 
 branding:
   icon: 'check-square'
   color: 'white'
