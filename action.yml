@@ -5,9 +5,6 @@ description: 'Super-linter is a ready-to-run collection of linters and code anal
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/enda-automation/enda-super-linter:latest'  # x-release-please-version
-  credentials:
-    username: ${{ github.actor }}
-    password: ${{ secrets.GHCR_PAT }} 
 branding:
   icon: 'check-square'
   color: 'white'
