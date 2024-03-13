@@ -2,24 +2,11 @@
 name: 'Super-Linter'
 author: 'Super-linter contributors'
 description: 'Super-linter is a ready-to-run collection of linters and code analyzers, to help validate your source code.'
-jobs:
-  linter_job:
-    runs-on: ubuntu-latest
-    name: Run Super-Linter
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Log in to GitHub Container Registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
-
-      - name: Run Super-Linter
-        uses: docker://ghcr.io/enda-automation/enda-super-linter:latest
-        runs:
-          using: 'docker'
-          image: 'docker://ghcr.io/enda-automation/enda-super-linter:latest'  # x-release-please-version
-        branding:
-          icon: 'check-square'
-          color: 'white'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/enda-automation/enda-super-linter:latest'  # x-release-please-version
+branding:
+  icon: 'check-square'
+  color: 'white'
 # You can view https://github.com/super-linter/super-linter#environment-variables
 # to see a comprehensive list of all environment variables that can be passed
