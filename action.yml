@@ -11,9 +11,12 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Super-Linter
-        uses: ghcr.io/enda-automation/enda-super-linter@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        runs:
+          using: 'docker'
+          image: 'docker://ghcr.io/enda-automation/enda-super-linter:latest'  # x-release-please-version
+        branding:
+          icon: 'check-square'
+          color: 'white'
