@@ -1,4 +1,4 @@
----
+A_ACTION---
 steps:
   - name: Checkout code
     uses: actions/checkout@v2
@@ -8,7 +8,7 @@ steps:
     with:
       registry: ghcr.io
       username: ${{ github.actor }}
-      password: ${{ secrets.GHCR_PAT }}
+      password: ${{ secrets.ENDA_ACTION }}
 
   - name: Run Super-Linter
     uses: enda-automation/test-enda-super-linter@latest
